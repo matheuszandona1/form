@@ -1,0 +1,116 @@
+<script src="./../node_modules/jquery/dist/jquery.js"></script>
+<script src="./js/frmnt.js"></script>
+<script>
+	$(".button-form").click(function (e) {
+		find(".form-container")
+		$(".form-container").addClass("ativo")
+	})
+</script>
+<script>
+	// obtém todas as divs que contêm as opções
+	const options = document.querySelectorAll(".residencia")
+
+	// obtém a div da mensagem
+	const mensagem = document.getElementById("mensagem")
+
+	// adiciona um evento de clique a cada label
+	options.forEach(function (opcao) {
+		const label = opcao.querySelector(".form-not")
+		label.addEventListener("click", function () {
+			// obtém o valor do atributo "for" da label clicada
+			const inputId = label.getAttribute("for")
+			// obtém o input correspondente
+			const input = document.getElementById(inputId)
+			// verifica se o input está selecionado
+			if (input.checked) {
+				// esconde todas as divs que contêm as opções
+				options.forEach(function (opcao) {
+					opcao.style.display = "none"
+				})
+				// exibe a mensagem e redireciona para o link após 3 segundos
+				mensagem.style.display = "block"
+				setTimeout(function () {
+					window.location.href = "https://naovoei.com/avaliar-indenizacao/typ-metereologico.php"
+				}, 3000)
+			}
+		})
+	})
+</script>
+<script>
+	const form = $("form");
+	const steps = form.find(".step");
+	const progress = $("#barra-progresso");
+
+	let currentStep = 0;
+
+	function showStep(step) {
+		// esconde todas as etapas do formulário
+		steps.removeClass("active");
+		// exibe a etapa atual do formulário
+		steps.eq(step).addClass("active");
+	}
+
+	// exibe a primeira etapa do formulário
+	showStep(currentStep);
+
+	function initStepNavigation(totalSteps) {
+		let currentStepLabel = $(`#step-${currentStep + 1}`);
+		const etapas = $("#barra-progresso li[data-step]");
+
+		etapas.each((index, etapa) => {
+			$(etapa).on("click", () => {
+				showStep(index);
+				currentStep = index;
+				atualizarBarraProgresso();
+			});
+		});
+
+		const labels = $(".step label[data-step]");
+
+		labels.each((index, label) => {
+			$(label).on("click", () => {
+				const nextStep = $(`#${label.dataset.step}`);
+				currentStepLabel.hide();
+				nextStep.show();
+				currentStepLabel = nextStep;
+				currentStep = Number(nextStep.attr("id").split("-")[1]) - 1;
+				atualizarBarraProgresso();
+			});
+		});
+
+		function atualizarBarraProgresso() {
+			etapas.each((index, etapa) => {
+				$(etapa).on("click", () => {
+					showStep(index);
+					currentStep = index;
+					currentStepLabel = $(`#step-${currentStep + 1}`);
+					atualizarBarraProgresso();
+				});
+				if (index === currentStep) {
+					$(etapa).addClass("ativo");
+				} else {
+					$(etapa).removeClass("ativo");
+				}
+				if (index < currentStep) {
+					$(etapa).addClass("completo");
+				} else {
+					$(etapa).removeClass("completo");
+				}
+			});
+		}
+
+		atualizarBarraProgresso();
+	}
+
+	initStepNavigation(6, 1);
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+	integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(".toggle-form").click(function (e) {
+		$(this).parent().parent().toggleClass("ativo")
+	})
+
+</script>

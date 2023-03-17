@@ -1,0 +1,171 @@
+<include src="./html/header.html"></include>
+
+<body class="page--home">
+  <include src="./html/nav.html"></include>
+
+  <main>
+    <div class="container">
+      <div class="container-2">
+        <button class="button-form">Começar</button>
+      </div>
+      <div class="form-container ativo">
+        <div class="form">
+          <form>
+            <fieldset class="step active" id="step-1">
+              <h2 class="form__title">Qual problema você teve em seu voo?</h2>
+              <div class="form-flex-1 form-step">
+                <div class="form-flex">
+                  <label data-step="step-2" class="form-flex form-label">
+                    <div class="form-icon">atraso</div>
+                    <input type="radio" id="atraso" name="genero" value="atraso" required>
+                    <span class="form-texto">Atraso</span>
+                  </label>
+                  <label data-step="step-2" class="form-flex form-label">
+                    <div class="form-icon">cancelamento</div>
+                    <input type="radio" id="cancelamento" name="genero" value="cancelamento" required>
+                    <span class="form-texto">Cancelamento</span>
+                  </label>
+                </div>
+                <div class="form-flex">
+                  <label data-step="step-2" class="form-flex form-label">
+                    <div class="form-icon">overbooking</div>
+                    <input type="radio" id="overbooking" name="genero" value="overbooking" required>
+                    <span class="form-texto">overbooking</span>
+                  </label>
+                  <label data-step="step-2" class="form-flex form-label">
+                    <div class="form-icon">bagagem</div>
+                    <input type="radio" id="bagagem" name="genero" value="bagagem" required>
+                    <span class="form-texto">Extravio de bagagem</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="step" id="step-2">
+              <h2 class="form__title">Qual o tempo de atraso na chegada do destino?
+              </h2>
+              <div class="form-step">
+                <label data-step="step-3" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="atraso" name="genero" value="atraso" required>
+                  <span class="form-texto">Menos de 4h</span>
+                </label>
+                <label data-step="step-3" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="cancelamento" name="genero" value="cancelamento" required>
+                  <span class="form-texto">Mais de 4h</span>
+                </label>
+                <label data-step="step-3" class="form-flex form-label">
+                  <div class="form-icon">cancelamento</div>
+                  <input type="radio" id="cancelamento" name="genero" value="cancelamento" required>
+                  <span class="form-texto">Não Cheguei</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="step" id="step-3">
+              <h2 class="form__title">Foi devido a problemas metereológicos?</h2>
+              <div class="form-step">
+                <label data-step="step-4" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="atraso" name="genero" value="atraso" required>
+                  <span class="form-texto">Sim</span>
+                </label>
+                <label data-step="step-4" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="cancelamento" name="genero" value="cancelamento" required>
+                  <span class="form-texto">Não</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="step" id="step-4">
+              <h2 class="form__title">Você teve malas extraviadas?</h2>
+              <div class="form-step">
+                <label data-step="step-5" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="atraso" name="genero" value="atraso" required>
+                  <span class="form-texto">Sim</span>
+                </label>
+                <label data-step="step-5" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="cancelamento" name="genero" value="cancelamento" required>
+                  <span class="form-texto">Não</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="step" id="step-5">
+              <h2 class="form__title">Você reside ou tem comprovante de residência no Brasil?
+
+              </h2>
+              <div class="form-step residencia">
+                <label data-step="step-6" class="form-flex form-label">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="teste" name="genero" value="teste" required>
+                  <span class="form-texto">Sim</span>
+                </label>
+                <label for="residenciaNot" class="form-flex form-label form-not">
+                  <div class="form-icon">atraso</div>
+                  <input type="radio" id="residenciaNot" name="genero" value="residenciaNot" required>
+                  <span class="form-texto">Não</span>
+                </label>
+              </div>
+              <div id="mensagem" style="display:none;">Obrigado por selecionar uma opção! Redirecionando...</div>
+
+
+
+
+            </fieldset>
+            <fieldset class="step" id="step-6">
+              <h2 class="form__title">SEUS DIREITOS FORAM VIOLADOS!
+              </h2>
+              <p>Já ajudamos mais de 5 mil passageiros! Vamos te auxiliar o mais rápido possível.
+              </p>
+              <div class="form-step">
+                <div class="form-flex mb">
+                  <label for="nome" class="form-flex form-label inputs">
+                    <input type="text" id="atraso" name="genero" value="nome" required>
+                  </label>
+                  <label for="atraso" class="form-flex form-label inputs">
+                    <input type="text" id="atraso" name="genero" placeholder="Telefone" required>
+                  </label>
+                </div>
+                <div class="form-flex">
+                  <label for="atraso" class="form-flex form-label inputs">
+                    <input type="text" id="atraso" placeholder="Email" value="email" required>
+                  </label>
+                  <div for="atraso" class="form-flex form-label inputs none">
+                    <input type="checkbox" id="atraso" name="" value="" required>
+                    <span>Viajei acompanhado neste voo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button-next">
+                <button type="submit" class="next" id="avancar">Enviar</button>
+              </div>
+            </fieldset>
+            <fieldset class="step">
+              <h2>Obrigado! Em breve um de nossos consultores entrará em contato!
+              </h2>
+            </fieldset>
+          </form>
+          <ol id="barra-progresso">
+            <li class="ativo first" data-step="step-1">1</li>
+            <li data-step="step-2">2</li>
+            <li data-step="step-3">3</li>
+            <li data-step="step-4">4</li>
+            <li data-step="step-5">5</li>
+            <li data-step="step-6">6</li>
+          </ol>
+          <div id="caminho-progresso"></div>
+
+          <button class="toggle-form">X</button>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <include src="./html/footer.html"></include>
+</body>
+
+</html>
