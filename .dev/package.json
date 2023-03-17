@@ -29,7 +29,6 @@
 		".eot$": "res/fonts/[name].[type]"
 	},
 	"devDependencies": {
-		"@parcel/optimizer-cssnano": "^2.8.3",
 		"@parcel/transformer-sass": "^2.8.3",
 		"@parcel/transformer-webmanifest": "^2.8.3",
 		"@rbf/parcel-optimizer-javascript-obfuscator": "^0.2.2",

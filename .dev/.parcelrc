@@ -4,15 +4,6 @@
   ],
   "namers": [
     "parcel-namer-custom", "..."
-  ],
-	"optimizers": {
-		"*.css": [
-			"...",
-			"@parcel/optimizer-cssnano"
-		],
-		"*.js": [
-			"...",
-			"@rbf/parcel-optimizer-javascript-obfuscator"
-		]
+  ]
+
 	}
-}
